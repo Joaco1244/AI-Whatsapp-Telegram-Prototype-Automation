@@ -1,0 +1,8 @@
+{
+  "name": "Simple Memory",
+  "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+  "parameters": {
+    "sessionIdType": "customKey",
+    "sessionKey": "session_placeholder"
+  }
+}
