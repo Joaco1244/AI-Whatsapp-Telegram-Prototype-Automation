@@ -1,0 +1,26 @@
+{
+  "name": "Edit Fields",
+  "type": "n8n-nodes-base.set",
+  "typeVersion": 3.4,
+  "parameters": {
+    "assignments": {
+      "assignments": [
+        {
+          "name": "telefono_id",
+          "value": "={{ $json.message.from.id }}",
+          "type": "number"
+        },
+        {
+          "name": "mensaje",
+          "value": "={{ $json.message.text }}",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "value": "={{ $json.message.chat.first_name }}",
+          "type": "string"
+        }
+      ]
+    }
+  }
+}
