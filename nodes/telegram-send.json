@@ -1,0 +1,9 @@
+{
+  "name": "Send Message",
+  "type": "n8n-nodes-base.telegram",
+  "parameters": {
+    "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+    "text": "={{ $json.output }}"
+  },
+  "credentials": {}
+}
