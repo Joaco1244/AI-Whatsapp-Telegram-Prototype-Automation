@@ -1,0 +1,9 @@
+{
+  "name": "Telegram Trigger",
+  "type": "n8n-nodes-base.telegramTrigger",
+  "typeVersion": 1.2,
+  "parameters": {
+    "updates": ["message"]
+  },
+  "credentials": {}
+}
