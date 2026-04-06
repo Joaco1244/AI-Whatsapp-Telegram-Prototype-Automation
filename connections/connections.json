@@ -1,0 +1,48 @@
+{
+  "Telegram Trigger": {
+    "main": [[{ "node": "Edit Fields" }]]
+  },
+  "Edit Fields": {
+    "main": [[{ "node": "AI Agent" }]]
+  },
+  "OpenAI Chat Model": {
+    "ai_languageModel": [[{ "node": "AI Agent" }]]
+  },
+  "Simple Memory": {
+    "ai_memory": [[{ "node": "AI Agent" }]]
+  },
+  "AI Agent": {
+    "main": [[{ "node": "Send Message" }]]
+  },
+
+  "Search Clientes Records": {
+    "ai_tool": [[{ "node": "AI Agent" }]]
+  },
+  "Search Servicios Records": {
+    "ai_tool": [[{ "node": "AI Agent" }]]
+  },
+  "Search Productos": {
+    "ai_tool": [[{ "node": "AI Agent" }]]
+  },
+  "Search base de datos": {
+    "ai_tool": [[{ "node": "AI Agent" }]]
+  },
+  "Create Conversaciones Record": {
+    "ai_tool": [[{ "node": "AI Agent" }]]
+  },
+  "Create record de COMPRA": {
+    "ai_tool": [[{ "node": "AI Agent" }]]
+  },
+  "Check availability citas/consulta": {
+    "ai_tool": [[{ "node": "AI Agent" }]]
+  },
+  "Create CITA": {
+    "ai_tool": [[{ "node": "AI Agent" }]]
+  },
+  "Reschedule cita": {
+    "ai_tool": [[{ "node": "AI Agent" }]]
+  },
+  "Cancelar CITA": {
+    "ai_tool": [[{ "node": "AI Agent" }]]
+  }
+}
