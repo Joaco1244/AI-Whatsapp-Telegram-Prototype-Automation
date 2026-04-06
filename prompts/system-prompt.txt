@@ -1,0 +1,132 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "updates": ["message"]
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "name": "Telegram Trigger",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "telefono_id",
+              "value": "={{ $json.message.from.id }}",
+              "type": "number"
+            },
+            {
+              "name": "mensaje",
+              "value": "={{ $json.message.text }}",
+              "type": "string"
+            },
+            {
+              "name": "name",
+              "value": "={{ $json.message.chat.first_name }}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "PASTE_YOUR_FULL_PROMPT_HERE"
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "my_test_session"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "model": "gpt-4.1-mini"
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "name": "OpenAI Chat Model",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}"
+      },
+      "type": "n8n-nodes-base.telegram",
+      "name": "Send Message",
+      "credentials": {}
+    },
+
+    // ======================
+    // AIRTABLE (SANITIZED)
+    // ======================
+
+    {
+      "parameters": {
+        "operation": "upsert",
+        "base": "YOUR_AIRTABLE_BASE_ID",
+        "table": "YOUR_TABLE_ID"
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "name": "Upsert Cliente",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": "YOUR_AIRTABLE_BASE_ID",
+        "table": "YOUR_TABLE_ID"
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "name": "Create Conversacion",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": "YOUR_AIRTABLE_BASE_ID",
+        "table": "YOUR_TABLE_ID"
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "name": "Search Clientes",
+      "credentials": {}
+    },
+
+    // ======================
+    // GOOGLE CALENDAR
+    // ======================
+
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": "YOUR_EMAIL@gmail.com"
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "name": "Check Availability",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "calendar": "YOUR_EMAIL@gmail.com"
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "name": "Create Event",
+      "credentials": {}
+    }
+  ],
+  "connections": {}
+}
