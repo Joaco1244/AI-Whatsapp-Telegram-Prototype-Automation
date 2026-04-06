@@ -1,0 +1,9 @@
+{
+  "name": "Create CITA",
+  "type": "n8n-nodes-base.googleCalendarTool",
+  "parameters": {
+    "operation": "create",
+    "calendar": "YOUR_CALENDAR_ID"
+  },
+  "credentials": {}
+}
