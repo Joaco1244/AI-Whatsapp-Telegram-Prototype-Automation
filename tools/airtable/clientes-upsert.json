@@ -1,0 +1,10 @@
+{
+  "name": "Upsert Cliente",
+  "type": "n8n-nodes-base.airtableTool",
+  "parameters": {
+    "operation": "upsert",
+    "base": "YOUR_AIRTABLE_BASE_ID",
+    "table": "CLIENTES_TABLE_ID"
+  },
+  "credentials": {}
+}
