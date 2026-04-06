@@ -1,0 +1,27 @@
+{
+  "name": "Telegram AI Agent",
+  "nodes": [
+    { "ref": "../nodes/trigger.json" },
+    { "ref": "../nodes/edit-fields.json" },
+    { "ref": "../nodes/ai-agent.json" },
+    { "ref": "../nodes/memory.json" },
+    { "ref": "../nodes/openai.json" },
+    { "ref": "../nodes/telegram-send.json" },
+
+    { "ref": "../tools/airtable/clientes-upsert.json" },
+    { "ref": "../tools/airtable/conversaciones-create.json" },
+    { "ref": "../tools/airtable/clientes-search.json" },
+    { "ref": "../tools/airtable/servicios-search.json" },
+    { "ref": "../tools/airtable/productos-search.json" },
+    { "ref": "../tools/airtable/base-conocimiento-search.json" },
+    { "ref": "../tools/airtable/compra-create.json" },
+
+    { "ref": "../tools/calendar/availability.json" },
+    { "ref": "../tools/calendar/create.json" },
+    { "ref": "../tools/calendar/reschedule.json" },
+    { "ref": "../tools/calendar/cancel.json" }
+  ],
+  "connections": {
+    "ref": "../connections/connections.json"
+  }
+}
